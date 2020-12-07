@@ -4,6 +4,11 @@ public class eventoSegundos {
 	
 	public static void main(String[] args) {
 		
+		/*3. Faça um sistema que leia o tempo de duração de um 
+		 * evento em uma fábrica expressa em segundos e mostre-o 
+		 * expresso em horas, minutos e segundos. 
+		 */
+		
 		Scanner leia = new Scanner(System.in);
 		
 		int tempoSegundos, horas, minutos, segundos;

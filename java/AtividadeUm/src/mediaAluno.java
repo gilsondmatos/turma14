@@ -3,7 +3,13 @@ import java.util.Scanner;
 public class mediaAluno {
 
 	public static void main(String[] args) {
-	  Scanner leia = new Scanner  (System.in);
+	  
+		/*4. Escreva  um sistema que leia três números 
+		 * inteiros e positivos (A, B, C) e calcule 
+		 * a seguinte expressão.
+		 */
+		
+		Scanner leia = new Scanner  (System.in);
 	  
 	  double nota1, nota2, nota3, mediaPonderada;
 	  
