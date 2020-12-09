@@ -1,0 +1,39 @@
+package Atividade1;
+
+import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
+
+public class SorteiroDuplas {
+
+	public static void main(String[] args) {
+		Scanner leia = new Scanner(System.in);
+
+		int numeros[] = new int[2];
+		String[] alunos = {"Allen de Lima Vieira","André de Brito Silva da Costa","Bárbara Liboni Guerra","Beatriz Martins","Beymar Jhoel Acapa Lima",
+				"Breno Nogueira Botelho Noccioli","Daniel Augusto Gomes Ferreira Filho","Danilo Mendes Ferreira","Danilo Pereira da Silva",
+				"Davi Silva Vieira","Diego Vinicio da Silva Nascimento","Erick Costa Ferreira","Ewerton Inacio Lima","Fernanda Agapito",
+				"Fernanda Barbosa Ferraz","Francisco José Pires","Gabriel Sérgio Nascimento Santos Gonçalves","Gideão da Silva Idelfonso",
+				"Gilson Amorim de Matos","Guilherme Gonçalves da Silva","Gustavo Rabelo Teles","Heloisa Beatriz de Oliveira Costa",
+				"Igor Mateus Queiroz Gato","Isabel Emiko Yamakawa Oyama","Jackeline Akemi de Moura","José Jorge Hauck Júnior","Juliana Santos André",
+				"Kélven Cleiton de Araújo Brandão","Laís Lima Santos","Lucas Anseloni Barros","Lucas Gonçalves da Silva","Luis felipe da silva",
+				"Luiz Felipe da Silva Magalhães","Marcos Eduardo Gomes Gonçalves","Micaely da Silva Lima","Rafaela Oliveira Silva","Tiago dos Santos Martins",
+				"Verônica Navarro Almena", "Vinicius de Alvez Miranda"};
+
+		for (int i = 0; i < numeros.length; i++) {
+
+			numeros[i] = new Random().nextInt(39)+1;
+			alunos[i];
+		}
+		Arrays.sort(numeros);	
+		System.out.println(Arrays.toString(numeros));
+		System.out.println(Arrays.toString(alunos));
+		
+
+		}
+
+		
+
+	}
+
+

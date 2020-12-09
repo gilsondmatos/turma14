@@ -12,19 +12,25 @@ public class valorCarro {
 		double impostos = 0.45;
 		double valorCarro = 0, totalImpostos;
 
-		System.out.println("|||||||CONCESSIONÁRIO QUEBRA-GALHO||||||||||||");
-		System.out.println("-----------------------------------------------");
+		mostra("|||||||CONCESSIONÁRIO QUEBRA-GALHO||||||||||||");
+		mostra("-----------------------------------------------");
 
-		System.out.println("Digite o valor do carro: ");
+		mostra("Digite o valor do carro: ");
 		valorCarro = leia.nextDouble();
 
 		totalImpostos = (valorCarro * (porcDistribuidor + impostos));
 		valorCarro = (valorCarro + totalImpostos);
 
-		System.out.println("Valor do carro para o Comsumidor: " + (valorCarro));
+		mostra("Valor do carro para o Comsumidor: " + (valorCarro));
 
-		System.out.println("||||||||||||||||||| OBRIGADO |||||||||||||||||||");
+		mostra("||||||||||||||||||| OBRIGADO |||||||||||||||||||");
 
+	}
+	
+	public static void mostra(String frase) {
+		
+		System.out.println(frase);
+		
 	}
 
 }
