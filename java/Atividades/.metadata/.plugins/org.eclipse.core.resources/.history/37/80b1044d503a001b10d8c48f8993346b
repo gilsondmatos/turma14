@@ -1,0 +1,55 @@
+package biteBank;
+
+import java.util.Scanner;
+
+public class CriaConta {
+
+	public static void main(String[] args) {
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		double valorASerSacado;
+
+		// Criando mecanismo de referência
+		Conta contaGilson = new Conta();// Criou um objeto do tipo conta
+		contaGilson.titular = new Cliente();
+		contaGilson.titular.nome = "Gilson";
+		
+		System.out.println("Bem vindo ao B2bank, " + contaGilson.titular.nome);
+		
+		System.out.println("Saldo Atual: " + contaGilson.getSaldo());
+		
+		for(int transacao = 0; transacao < 3; transacao++) {
+			System.out.println("Digite a opção de transação");
+			System.out.println("1 - Crédito ");
+			System.out.println("2 - Débito ");
+			System.out.println("3 - Saldo ");
+			System.out.println("0 - Sair");
+			opcao = entrada.nextInt();
+			
+			if(opcao == 1) {
+				
+				System.out.println("Digite o valor a ser creditado");
+				credito = entrada.nextDouble();
+				saldo = saldo + credito;
+			}else if(opcao == 2 ) {
+				
+				if(saldo <= 0.0) {
+					
+					System.out.println("Não é possível realizar o saque!");
+				}else if(saldo >= debito) {
+					
+					System.out.println("Digite o valor a ser debitado");
+					debito = entrada.nextDouble();
+					saldo -= debito;
+				}
+			}else if(opcao == 3) {
+				System.out.println("Saldo: R$ "+saldo);
+			}else if(opcao == 0) {
+				System.out.println("Encerrando acesso a conta");
+				System.exit(0);
+			}
+		
+	}
+
+}

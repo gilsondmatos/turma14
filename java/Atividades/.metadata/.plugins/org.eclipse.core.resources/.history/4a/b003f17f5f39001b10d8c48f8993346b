@@ -1,0 +1,35 @@
+package Atividade1;
+
+import java.util.Scanner;
+
+public class anoNascimento {
+
+	public static void main(String[] args) {
+		
+		Scanner leia = new Scanner(System.in);
+		
+		int idadeAtual;
+		
+		
+		System.out.println("DIGITE O ANO DO SEU NASCIMENTO: ");
+		idadeAtual = leia.nextInt();
+		System.out.println("A idade atual é: " + idade(idadeAtual));
+		
+		
+		
+		
+		
+
+	}
+	
+		public static int idade (int anoNascimento) {
+		
+			
+			int idade = 2020 - anoNascimento;
+			
+			return idade;
+		
+	
+		}
+
+}

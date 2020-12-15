@@ -1,13 +1,19 @@
 package Revisao;
 
+import java.util.Scanner;
+
 public class NumerosIntervalos {
 
-	public NumerosIntervalos() {
-		// TODO Auto-generated constructor stub
-	}
+		public static void main(String[] args) {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
+			
+			int numero;
+			int contador;
+
+			
+			
+		
 
 	}
 

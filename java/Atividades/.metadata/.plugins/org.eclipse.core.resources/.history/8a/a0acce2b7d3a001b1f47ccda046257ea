@@ -1,0 +1,28 @@
+package LacoRepeticao;
+
+import java.util.Scanner;
+
+public class ContagemTela {
+
+	public static void main(String[] args) {
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		int medidor = 233, acm = 5;
+		
+		do {
+			
+			System.out.println(medidor + " ");
+			medidor = medidor + acm;
+			
+			if(medidor >=300 && medidor <= 400) {
+				
+				acm = 3;
+			}else {
+				acm = 5;
+			}
+		}while(medidor <=456);
+
+	}
+
+}

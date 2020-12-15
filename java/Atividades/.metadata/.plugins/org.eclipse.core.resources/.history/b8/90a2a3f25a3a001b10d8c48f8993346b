@@ -1,0 +1,116 @@
+		
+		
+		real debito=0.00, credito=0.00, emprestimo=0.00
+		inteiro acessaTransacao
+		caracter opcao
+				    	
+	    	//Menu
+				enquanto (indiceTransacao < LIMITE_TRANSACAO) {   
+		    	escreva("Digite uma das opções:")
+		    	pulaLinha()
+	        	escreva("1 - Crédito")
+	        	pulaLinha()
+	        	escreva("2 - Débito")
+	        	pulaLinha()
+	        	escreva("3 - Saldo")
+	        	pulaLinha()
+	        	escreva("4 - Empréstimo")
+	        	pulaLinha()
+	        	escreva("0 - Sair")
+	        	pulaLinha()
+	   			leia(acessaTransacao)
+	   			pulaLinha()
+
+     			se(acessaTransacao == 0) {
+				pulaLinha()
+				escreva("Obrigado por fazer parte do G2BANK")
+				pulaLinha()
+				pare
+				
+				} senao se(acessaTransacao == 1)
+   				
+   				{
+        			escreva("Quanto você quer depositar: ")
+        			leia(credito)
+        			pulaLinha()
+        			pulaLinha()
+        			escreva("------------------ Realizando Depósito: --------------- ")
+              		pulaLinha()
+              		escreva("Saldo anterior R$: ", saldoUniversitario)
+              		saldoUniversitario = (saldoUniversitario + credito)
+				movimento[dia - 1][indiceTransacao] = credito
+				apropriaMovimento("Universitária", "C")
+				indiceTransacao++
+	        		pulaLinha()
+        			escreva("Deposito realizado com sucesso! Seu novo saldo R$ ", saldoUniversitario)
+        	     	pulaLinha()
+        			escreva("------------------------------------------------------- ")
+        			pulaLinha()
+        			pulaLinha()
+   			}
+   			senao se(acessaTransacao == 2)
+   			{
+        			escreva("Quanto você quer sacar R$: ")
+        			leia(debito)
+   				se (saldoUniversitario-debito < 0) {
+	        			escreva("Saldo Insuficiente! Seu saldo é de R$ ",saldoUniversitario)
+	        			pulaLinha()
+        				pulaLinha()
+   				} senao {
+	        			saldoUniversitario = (saldoUniversitario - debito)
+	        			limpa()
+	        			movimento[dia - 1][indiceTransacao] = -1 * debito
+	        			apropriaMovimento("Universitária", "D")
+	        			indiceTransacao++
+	        			escreva("Saque efetuado com sucesso! seu novo saldo é R$ ", saldoUniversitario)
+	        			pulaLinha()
+        				pulaLinha()
+        			}		
+			}
+   			senao se(acessaTransacao == 3) 
+   			{
+        			pulaLinha()
+        			escreva("Saldo: R$ ",saldoUniversitario)
+        			pulaLinha()
+        			pulaLinha()
+   			} senao se(acessaTransacao == 4) {
+		        	escreva("Você tem o um limite de R$", saldoEmprestimoUniversitario, " pré aprovado!")
+		        	pulaLinha()
+		        	pulaLinha()
+		   	     escreva("Quer realizar um empréstimo? S/N")
+		   	     pulaLinha()
+		   	     leia(opcao)
+
+	   	     	se(opcao == 'S' ou opcao =='s') {
+					pulaLinha()
+					escreva("Digite valor do empréstimo: ")
+					leia(emprestimo)
+					se(emprestimo > saldoEmprestimoUniversitario) {
+						escreva("Valor não Aprovado! Lembrando você tem apenas R$", saldoEmprestimoUniversitario, " pré aprovado")
+						pulaLinha()
+					}
+					senao se(emprestimo <= saldoEmprestimoUniversitario) {
+						saldoUniversitario = (saldoUniversitario + emprestimo)
+						limpa()
+						escreva("Empréstimo efetuado com sucesso! Seu novo saldo é: R$ ", saldoUniversitario)
+						pulaLinha()
+					     pulaLinha()
+					}		
+   	     		} senao se(opcao == 'N' ou opcao =='n') {	
+	   	     		pulaLinha()
+					escreva("Obrigado por fazer parte do B2BANK")
+					pulaLinha()
+					pulaLinha()
+				}
+
+			} 
+		}
+		se (indiceTransacao == LIMITE_TRANSACAO) {
+			pulaLinha()
+			escreva("Suas ", LIMITE_TRANSACAO, " movimentações diárias chegou ao limite! Por favor, retorne amanhã.")
+			dia++
+			indiceTransacao = 0
+			pulaLinha()
+			escreva("O saldo após as movimentações é de R$ ", saldoUniversitario)
+		}
+	}

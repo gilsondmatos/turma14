@@ -1,0 +1,14 @@
+package biteBank;
+
+public class Conta {
+
+	public static void main(String[] args) {
+		
+		double saldo; // Nasce desce tipo e morreu desce tipo //double tem perda de precisão
+		int agencia;
+		int numero;
+		String titular;
+
+	}
+
+}

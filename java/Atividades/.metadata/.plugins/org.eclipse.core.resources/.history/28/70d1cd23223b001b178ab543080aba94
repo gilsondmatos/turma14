@@ -1,0 +1,151 @@
+package loja;
+
+import java.util.Scanner;
+
+public class CadLoja {
+
+	public static void main(String[] args) {
+
+		Scanner entrada = new Scanner(System.in);
+
+		char opcao = ' ', continuar = ' ';
+		String nomeCliente;
+		char genero = ' ';
+		String Cardapio[] = {"BOLO DE CENOURA", "BOLO MÁRMORE", "BOLO DE CENORA", "BOLO DE PRESTIGIO",
+				"BOLO DE CHOCOLATE", "CAIXA BRIGADEIRO", "TORTA HOLANDESA", "DONUTS", "BOLO DE BANANA",
+				"BOLO RED VELVET"};
+
+		int codigoProduto[] = new int[10];
+		int qntdProdutos[] = {5,4,6,4,8,5,7,4,2,7};
+		int alteraEstoque;
+
+		logoEmpresa();
+		nomeEmpresa();
+		logoEmpresa();
+
+		Menu();
+		opcao = entrada.next().charAt(0);
+
+		if (opcao == '1') {
+
+			do {
+				System.out.println("Informe seu nome: ");
+				entrada.nextLine();
+				nomeCliente = entrada.nextLine();
+
+				System.out.println("Como você se define [M] MASCULINO [F] FEMININO [O] OUTRO: ");
+				genero = entrada.next().toUpperCase().charAt(0);
+				System.out.println("Seja Bem-vind" + voltaGenero(genero) + " " + nomeCliente);
+
+				do {
+					System.out.println();
+					System.out.println("Deseja continuar? | S | N |");
+					continuar = entrada.next().toUpperCase().charAt(0);
+
+					while (continuar != 'S' && continuar != 'N') {
+						pulaLinha();
+						System.out.println("Opção Inválida");
+						break;
+					}
+				} while (continuar != 'S' && continuar != 'N');
+
+				if (continuar == 'N') {
+					break;
+				}
+			} while (continuar != 'N');
+
+		} else if (opcao == '2') {
+
+			for (int i=0; i<10; i++) {
+					codigoProduto[i] = i+1;
+			}
+			
+			logoEmpresa();
+			System.out.println("CÓD.\tQNTD\tITEM");
+			logoEmpresa();
+		
+						
+			for (int i=0; i<10; i++) {
+				System.out.printf(" %d\t %d\t%s\n",codigoProduto[i], qntdProdutos[i], Cardapio[i]);
+				inseriLinha(40, "-");
+			}
+			
+			System.out.print("DESEJA ALTERAR ESTOQUE? | S | N |:");
+			alteraEstoque = entrada.nextInt();
+			
+				do {
+					System.out.println();
+					System.out.println("Deseja continuar? | S | N |");
+					continuar = entrada.next().toUpperCase().charAt(0);
+
+					while (continuar != 'S' && continuar != 'N') {
+						pulaLinha();
+						System.out.println("Opção Inválida");
+						break;
+					}
+
+				while (continuar != 'S' && continuar != 'N');
+
+					if (continuar == 'N') {
+					break;
+				}
+
+			} while (continuar != 'N');
+
+		}
+
+		else if (opcao == '3') {
+
+			pulaLinha();
+			System.out.println("Agradecemos pela Preferência!");
+			System.out.println("Tenha um dia cheio de AMOR!");
+
+		}
+	}
+
+	public static char voltaGenero(char genero) {
+
+		if (genero == 'M') {
+			return 'o';
+		} else if (genero == 'F') {
+			return 'a';
+		} else {
+			return 'x';
+		}
+	}
+
+	public static void pulaLinha() {
+
+		System.out.println();
+	}
+
+	public static void Menu() {
+
+		System.out.println("       [1] - COMPRA PRODUTOS           ֎");
+		System.out.println("       [2] - GERENCIAR ESTOQUE         ֎");
+		System.out.println("       [3] - SAIR                      ֎");
+		logoEmpresa();
+		pulaLinha();
+		System.out.print("OPÇÃO: ");
+
+	}
+
+	public static void nomeEmpresa() {
+		System.out.println("       AMORI DOCES E BRIGADEIROS       ֎");
+		System.out.println("            Feito com Amor             ֎");
+	}
+
+	public static void inseriLinha(int tamanho, String simbolo) {
+		for (int i = 0; i < tamanho; i++) {
+			System.out.print(simbolo);
+		}
+		System.out.println();
+	}
+
+	public static void logoEmpresa() {
+		inseriLinha(40, "֎");
+
+	}
+
+}
+

@@ -1,0 +1,32 @@
+package LacoRepeticao;
+
+import java.util.Scanner;
+
+public class MultiplicaPorTres {
+
+	public static void main(String[] args) {
+		
+		Scanner entrada = new Scanner(System.in);
+		
+	/*2- Obtenha um número digitado pelo usuário e repita a operação de 
+	multiplicar ele por três  (imprimindo o novo valor) até que ele seja 
+	maior do que 100. Ex.: se o usuário digita 5,  deveremos observar na tela 
+	a seguinte sequência: 5 15 45 135.*/
+		
+		int numero = 0;
+		int multiplicacao;
+		
+		while (numero <=100) {
+			
+			System.out.println("Digite um número:");
+			numero = entrada.nextInt();
+			
+			multiplicacao = numero * 3;
+		}
+		
+		
+
+
+	}
+
+}

@@ -1,0 +1,27 @@
+package biteBank;
+
+import java.util.Scanner;
+
+public class CriaConta {
+
+	public static void main(String[] args) {
+		
+		Scanner leia = new Scanner(System.in);
+		
+		double valorASerSacado;
+
+		// Criando mecanismo de referência
+		Conta contaGilson = new Conta();// Criou um objeto do tipo conta
+		contaGilson.titular = new Cliente();
+		contaGilson.titular.nome = "Gilson";
+		
+		System.out.println("Bem vindo ao B2bank, " + contaGilson.titular.nome);
+		
+
+		
+		contaGilson.deposita(1500);
+		System.out.println("Seu saldo é: " + contaGilson.getSaldo());
+			
+	}
+
+}

@@ -1,0 +1,28 @@
+package ExerciciosLacoCondicional;
+
+import java.util.Scanner;
+
+public class JoaoPapo {
+
+	public static void main(String[] args) {
+		
+		Scanner leia = new Scanner(System.in);
+		
+		double pesoTomates;
+		double quiloExcesso = 4.00;
+		double excesso;
+		double valorMulta;
+		
+		System.out.println("Digite o peso dos tomates: ");
+		pesoTomates = leia.nextDouble();
+		
+		
+		
+
+		
+		
+	
+
+	}
+
+}

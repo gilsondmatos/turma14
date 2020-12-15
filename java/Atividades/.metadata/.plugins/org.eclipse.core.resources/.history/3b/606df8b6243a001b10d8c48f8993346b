@@ -1,0 +1,42 @@
+package biteBank;
+
+public class Conta {
+
+	double saldo; // Nasce desce tipo e morreu desce tipo //double tem perda de precisão
+	int agencia;
+	int numero;
+	Cliente titular;
+	
+	// Deposita
+	public void deposita(double valor) {
+
+		saldo += valor;
+	}
+	//Saca
+	public void saca(double valor) {
+
+		if (this.saldo >= valor) {
+			this.saldo -= valor;
+			System.out.println("Saque realizado com sucesso!");
+		} else {
+			System.out.println("Saldo Insuficiente!");
+		}
+
+	}
+	
+	public boolean transfere (double valor, Conta destino){
+		
+		if(this.saldo >= valor) {
+			this.saldo -= valor;
+			destino.deposita(valor);
+			return true;
+		}
+		return false;
+	}
+}
+		
+	
+	
+	
+
+

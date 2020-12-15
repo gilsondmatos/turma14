@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+C:\Users\Gilson\Desktop\turma14\java\Atividades\BBank\src\b2bank\.metadata\.plugins\org.eclipse.jdt.core

@@ -1,0 +1,48 @@
+package biteBank;
+
+import java.util.Scanner;
+
+public class CriaConta {
+
+	public static void main(String[] args) {
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		double valorASerSacado;
+		double valorASerDepositado;
+		int opcao = 0;
+		String numeroConta;
+
+		// Criando mecanismo de referência
+		Conta contaGilson = new Conta();// Criou um objeto do tipo conta
+		contaGilson.titular = new Cliente();
+		contaGilson.titular.nome = "Gilson";
+		
+		
+		numeroConta = entrada.next();
+		contaGilson.setNumero(numeroConta);
+		System.out.println("Saldo Atual: " + contaGilson.getSaldo());
+		
+		System.out.println("Digite o número da conta: ");
+		
+		for(int transacao = 0; transacao < 3; transacao++) {
+			System.out.println("Digite a opção de transação");
+			System.out.println("1 - Crédito ");
+			System.out.println("2 - Débito ");
+			System.out.println("3 - Saldo ");
+			System.out.println("0 - Sair");
+			opcao = entrada.nextInt();
+			
+			if(opcao == 1) {
+				
+				System.out.println("Digite o valor a ser creditado: ");
+				valorASerDepositado = entrada.nextDouble();
+				contaGilson.deposita(valorASerDepositado);
+				System.out.println("Seu novo saldo é: " + contaGilson.getSaldo());
+				
+			}
+		}
+	}
+}
+
+	

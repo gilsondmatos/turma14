@@ -1,0 +1,46 @@
+package ExerciciosLacoCondicional;
+
+import java.util.Scanner;
+
+public class JoaoPapo {
+
+	public static void main(String[] args) {
+		
+		Scanner leia = new Scanner(System.in);
+		
+		double pesoTomates;
+		double quiloExcesso = 4.00;
+		double excesso;
+		double valorMulta;
+		
+		System.out.println("Digite o peso dos tomates: ");
+		pesoTomates = leia.nextDouble();
+		
+		if(pesoTomates <= 50) {
+			System.out.println("Valor dentro do normal");
+		
+		}else if (pesoTomates > 50) {
+			
+			excesso = (pesoTomates - 50);
+			valorMulta = ((pesoTomates-50)*quiloExcesso);
+			
+			System.out.println("Você excedeu o peso dos tomates em " + excesso);
+			System.out.println("Valor da multa é de R$ " + valorMulta);
+			
+			
+			
+			
+			
+			
+		}
+		
+		
+		
+
+		
+		
+	
+
+	}
+
+}

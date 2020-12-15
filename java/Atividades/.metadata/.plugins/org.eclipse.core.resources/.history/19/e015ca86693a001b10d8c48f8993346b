@@ -1,0 +1,46 @@
+package LacoRepeticao;
+
+import java.util.Scanner;
+
+public class Pesquisa {
+
+	public static void main(String[] args) {
+
+		Scanner entrada = new Scanner(System.in);
+
+		//PARA
+		// 1- A prefeitura de uma cidade fez uma pesquisa entre 20 de seus habitantes,
+		// coletando dados sobre o salário e número de filhos. A prefeitura deseja
+		// saber:
+
+		// a) média do salário da população;
+		// b) média do número de filhos;
+		// c) maior salário;
+
+	int habitante = 20;
+	String respFamiliar;
+	double salario = 0.00, mediaSalarios=0.00;
+	int filhos=0, mediaFilhos=0;
+	
+	for(int i = 0; i < 3;i++) {
+		System.out.println("Digite o nome do responsável Familiar: ");
+		respFamiliar = entrada.next();
+		
+		System.out.println("Digite o valor do seu salário: ");
+		salario = entrada.nextDouble();
+		
+		System.out.println("Quantos filhos você tem: ");
+		filhos = entrada.nextInt();
+	}
+	
+		mediaSalarios = (salario/habitante);
+		mediaFilhos = (filhos/habitante);
+		
+		System.out.printf("A média de filhos é: %d" + mediaFilhos);
+	
+	
+	
+	
+	}
+
+}

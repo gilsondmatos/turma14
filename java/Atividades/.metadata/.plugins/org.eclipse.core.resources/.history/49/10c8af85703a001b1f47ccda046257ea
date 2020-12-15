@@ -1,0 +1,32 @@
+package LacoRepeticao;
+
+import java.util.Scanner;
+
+public class SomaImpares {
+
+	public static void main(String[] args) {
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		/*2- Desenvolver um sistema que efetue a soma de todos os números ímpares que são  múltiplos de
+		três e que se encontram no conjunto dos números de 1 até 500.*/
+		
+		int numero = 0, soma = 0;
+		
+		for(int i=0; i< 500;i++) {
+			
+			if(numero % 3 == 0) {
+				soma+= numero;
+			}
+		}
+			
+			System.out.println("Soma %d" + soma);
+			
+	
+			
+		}
+}
+
+}
+
+}

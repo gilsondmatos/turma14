@@ -1,0 +1,8 @@
+package biteBank;
+
+public class Cliente {
+	
+	String nome;
+	String cpf;
+
+}

@@ -1,0 +1,80 @@
+package biteBank;
+
+import java.util.Scanner;
+
+public class CriaConta {
+
+	public static void main(String[] args) {
+
+		Scanner entrada = new Scanner(System.in);
+
+		double valorASerSacado = 0.00;
+		double valorASerDepositado = 0.00;
+		int opcao = 0;
+		String numeroConta;
+		char continuar = 'S';
+
+		// Criando mecanismo de referência
+		Conta contaGilson = new Conta();// Criou um objeto do tipo conta
+		contaGilson.titular = new Cliente();
+		contaGilson.titular.nome = "Gilson";
+
+		System.out.print("Digite o número da sua conta: ");
+		numeroConta = entrada.next();
+		contaGilson.setNumero(numeroConta);
+		System.out.println("Saldo Atual: " + contaGilson.getSaldo());
+
+		System.out.println("Digite o número da conta: ");
+
+		for (int transacao = 0; transacao < 10; transacao++) {
+			System.out.println("Digite a opção de transação");
+			System.out.println("1 - Crédito ");
+			System.out.println("2 - Débito ");
+			System.out.println("3 - Saldo ");
+			System.out.println("0 - Sair");
+			opcao = entrada.nextInt();
+
+			if (opcao == 1) {
+
+				System.out.println("Digite o valor a ser creditado: ");
+				valorASerDepositado = entrada.nextDouble();
+				contaGilson.deposita(valorASerDepositado);
+
+			} else if (opcao == 2) {
+
+				if (contaGilson.getSaldo() <= 0.0) {
+
+					System.out.println("Não é possível realizar o saque!");
+
+				} else if (contaGilson.getSaldo() >= valorASerSacado) {
+
+					System.out.println("Digite o valor a ser debitado:");
+					valorASerSacado = entrada.nextDouble();
+					contaGilson.saca(valorASerSacado);
+
+					if (contaGilson.getSaldo() < 0) {
+						System.out.println("Não é possível realizar este débito. O saldo não pode ser nagativo.");
+					}
+
+					System.out.println("Saldo: R$ " + contaGilson.getSaldo());
+				}
+			} else if (opcao == 3) {
+
+				System.out.println("Saldo: R$ " + contaGilson.getSaldo());
+
+			} else if (opcao == 0) {
+				System.out.println("Encerrando acesso a conta");
+				System.exit(0);
+			}
+
+			System.out.println(
+					"Você realizou todas as possíveis transações em Conta Universitaria, deseja continuar? (S/N)");
+			continuar = entrada.next().toUpperCase().charAt(0);
+
+			while (continuar == 'S')
+				;
+
+		}
+
+	}
+}

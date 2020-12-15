@@ -1,0 +1,48 @@
+package ExerciciosLacoCondicional;
+
+import java.util.Scanner;
+
+
+public class Operarios {
+
+	public static void main(String[] args) {
+
+		Scanner leia = new Scanner(System.in);
+
+		// VARIAVEIS - INGREDIENTES
+		String codigo;
+		int N = 0;
+		int E = 0;
+		double salarioTotal = 0.0, salarioExcedente = 0.0, salarioBase = 0.0;
+
+		final double VALORHORANORMAL = 10.00;
+		final double VALORHORAEXCEDENTE = 20.00;
+		final int LIMITEHORAS = 50;
+
+		System.out.println("Digite o codigo do funcionario: ");
+		codigo = leia.next();
+		System.out.println("Digite a qtde de horas trabalhadas: ");
+		N = leia.nextInt();
+
+		if (N <= LIMITEHORAS) {
+			salarioBase = (N * VALORHORANORMAL);
+			salarioTotal = salarioBase;
+		
+		} else {
+			E = (N - LIMITEHORAS);
+			salarioBase = (LIMITEHORAS * VALORHORANORMAL);
+			salarioExcedente = E * VALORHORAEXCEDENTE;
+			salarioTotal = salarioBase + salarioExcedente;
+
+		}
+
+		// SAIDAS
+		System.out.println("Horas Trabalhadas: " + N);
+		System.out.println("Horas excedentes: " + E);
+		System.out.println("Salário base: R$ " + salarioBase);
+		System.out.println("Salario excedente: R$ " + salarioExcedente);
+		System.out.println("Salario total: R$ " + salarioTotal);
+
+	}
+
+}
