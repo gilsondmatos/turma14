@@ -2,33 +2,21 @@ package ExercicioEncapsulamento;
 
 public class Operario extends Pessoa {
 
-	
 	public Operario(String nome) {
 		super(nome);	
 	}
-	private double valorProducao; //Que corresponde ao valor monetário dos artigos efetivamente produzidos pelo operário
+	private double valorProducao ; //Que corresponde ao valor monetário dos artigos efetivamente produzidos pelo operário
 	private double comissao; //Que corresponde à porcentagem do valorProducao que será adicionado ao vencimento base do operário
+	private double salariobase;
 	
 	
-	
-	//METODOS
 	public double bonificacao () {
 		
 		return valorProducao*comissao;
 	}
 	
-	void vProducao (double valor) {
-		valorProducao = (valorProducao+valor);
-	}
-	
-	void porcentagemComissao (double valor) {
-		comissao = comissao + valor;
-	}
 	
 	//ENCAPSULAMENTO
-	
-	
-	
 	public double getValorProducao() {
 		return valorProducao;
 	}
@@ -40,6 +28,16 @@ public class Operario extends Pessoa {
 	}
 	public void setComissao(double comissao) {
 		this.comissao = comissao;
+	}
+
+
+	public double getSalariobase() {
+		return salariobase;
+	}
+
+	public void setSalariobase(double salariobase) {
+		this.salariobase = salariobase;
+	
 	}
 	
 	
