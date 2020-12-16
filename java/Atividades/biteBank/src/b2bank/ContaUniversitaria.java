@@ -2,11 +2,25 @@ package b2bank;
 
 import java.util.Scanner;
 
-public class ContaUniversitaria {
+public class ContaUniversitaria extends ContaEspecial {
 
+	private double emprestimoUniversitario;
+
+	public double getEmprestimoUniversitario() {
+		return emprestimoUniversitario;
+	}
+
+	public void setEmprestimoUniversitario(double emprestimoUniversitario) {
+		this.emprestimoUniversitario = emprestimoUniversitario;
+	}
+	
+	
+	
+}
+	/*
 	public static void main(String[] args) {
 
-		Scanner entrada = new Scanner(System.in);
+		Scanner leia = new Scanner(System.in);
 
 		double valorASerSacado = 0.00;
 		double valorASerDepositado = 0.00;
@@ -19,7 +33,7 @@ public class ContaUniversitaria {
 		contaGilson.titular.nome = "Gilson";
 
 		System.out.print("Digite o número da sua conta: ");
-		numeroConta = entrada.next();
+		numeroConta = leia.next();
 		contaGilson.setNumero(numeroConta);
 		System.out.println("Saldo Atual: " + contaGilson.getSaldo());
 
@@ -32,12 +46,12 @@ public class ContaUniversitaria {
 				System.out.println("2 - Débito ");
 				System.out.println("3 - Saldo ");
 				System.out.println("0 - Sair");
-				opcao = entrada.nextInt();
+				opcao = leia.nextInt();
 
 				if (opcao == 1) {
 
 					System.out.println("Digite o valor a ser creditado: ");
-					valorASerDepositado = entrada.nextDouble();
+					valorASerDepositado = leia.nextDouble();
 					contaGilson.deposita(valorASerDepositado);
 
 				} else if (opcao == 2) {
@@ -49,7 +63,7 @@ public class ContaUniversitaria {
 					} else if (contaGilson.getSaldo() >= valorASerSacado) {
 
 						System.out.println("Digite o valor a ser debitado:");
-						valorASerSacado = entrada.nextDouble();
+						valorASerSacado = leia.nextDouble();
 						contaGilson.saca(valorASerSacado);
 
 						if (contaGilson.getSaldo() < 0) {
@@ -71,10 +85,10 @@ public class ContaUniversitaria {
 
 			System.out.println(
 					"Você realizou todas as possíveis transações em Conta Universitaria, deseja continuar? (S/N)");
-			continuar = entrada.next().toUpperCase().charAt(0);
+			continuar = leia.next().toUpperCase().charAt(0);
 
 		} while (continuar == 'S');
 
 	}
+*/
 
-}
